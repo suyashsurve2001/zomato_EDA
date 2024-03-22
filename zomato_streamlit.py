@@ -4,8 +4,8 @@ import streamlit as st
 import seaborn as sns
 import altair as alt
 
-df_zomt= pd.read_csv("D:\Dataset\Zomatodataset\zomato.csv",encoding='latin-1')
-df_conty=pd.read_excel("D:\Dataset\Zomatodataset\Country-Code.xlsx")
+df_zomt= pd.read_csv("zomato.csv",encoding='latin-1')
+df_conty=pd.read_excel("Country-Code.xlsx")
 df_final=pd.merge(df_zomt,df_conty,on='Country Code',how="left")
 
 Country_name=df_final.Country.value_counts().index
